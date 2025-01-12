@@ -17,16 +17,18 @@ class Solution
      */
     function moveZeroes(array $nums)
     {
-        $left = 0; // 指向要填充非零數字的位置
+        // 定義左指針初始位置為 0
+        $left = 0;
 
+        // 右指針從 0 開始遍歷陣列
         for ($right = 0; $right < count($nums); $right++) {
+            // 如果右指針指向的數字不是 0，則將其填充到左指針指向的位置
             if ($nums[$right] != 0) {
-                // 交換 nums[left] 和 nums[right]
                 $temp = $nums[$left];
                 $nums[$left] = $nums[$right];
                 $nums[$right] = $temp;
-
-                $left++; // 移動左指針
+                // 左指針右移
+                $left++;
             }
         }
     }
