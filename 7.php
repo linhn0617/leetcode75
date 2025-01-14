@@ -1,4 +1,5 @@
 <?php
+
 /**
  * link:
  * https://leetcode.com/problems/reverse-integer/description/
@@ -7,20 +8,22 @@
  * Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
  */
 
-class Solution {
+class Solution
+{
 
     /**
      * @param Int $x
      * @return Int
      */
-    function reverse($x) {
+    function reverse($x)
+    {
         // 將輸入整數進行絕對值後反轉
         $int = (int)strrev(abs($x));
         if ($x < 0) {
             $int *= -1;
         }
         // 判斷是否超出範圍，若超出則回傳0
-        if ($int > 2**31-1 || $int < -2**31) {
+        if ($int > 2 ** 31 - 1 || $int < -2 ** 31) {
             return 0;
         }
         return $int;
