@@ -11,23 +11,25 @@
  * Given a string word, return true if the usage of capitals in it is right.
  */
 
- class Solution {
+class Solution
+{
 
     /**
      * @param String $word
      * @return Boolean
      */
-    function detectCapitalUse($word) {
+    function detectCapitalUse($word)
+    {
         // 判斷是否全大寫
-        if (ctype_upper($word)){
+        if (ctype_upper($word)) {
             return TRUE;
-        // 判斷是否全小寫
-        }else if(ctype_lower($word)){
+            // 判斷是否全小寫
+        } else if (ctype_lower($word)) {
             return TRUE;
-        // 判斷是否只有首字母大寫，其他小寫
-        }else if(ctype_upper($word[0])&& ctype_lower(substr($word, 1))){
+            // 判斷是否只有首字母大寫，其他小寫
+        } else if (ctype_upper($word[0]) && ctype_lower(substr($word, 1))) {
             return TRUE;
-        }else{
+        } else {
             return FALSE;
         }
     }
