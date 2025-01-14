@@ -1,4 +1,5 @@
 <?php
+
 /**
  * link:
  * https://leetcode.com/problems/longest-continuous-increasing-subsequence/description/
@@ -7,22 +8,23 @@
  * A continuous increasing subsequence is defined by two indices l and r (l < r) such that it is [nums[l], nums[l + 1], ..., nums[r - 1], nums[r]] and for each l <= i < r, nums[i] < nums[i + 1].
  */
 
-function findLongestIncreasingSubsequence(Array $nums) {
+function findLongestIncreasingSubsequence(array $nums)
+{
 
+    //定義最大遞增子陣列的長度為 1
     $maxLength = 1;
+    //定義當前遞增子陣列的長度為 1
     $currentLength = 1;
     for ($i = 1; $i < count($nums); $i++) {
-
-        if ($nums[$i-1]<$nums[$i]) {
+        // 如果當前元素大於前一個元素，遞增子陣列長度加 1，否則重置為 1
+        if ($nums[$i - 1] < $nums[$i]) {
             $currentLength++;
-        }else {
+        } else {
             $currentLength = 1;
         }
+        // 更新最大遞增子陣列的長度
         $maxLength = max($maxLength, $currentLength);
     }
 
-    return $maxLength;   
+    return $maxLength;
 }
-
-$answer = findLongestIncreasingSubsequence([1,3,5,4,7,9,10]);
-echo $answer;

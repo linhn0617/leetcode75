@@ -14,7 +14,7 @@ class Solution {
      * @return Int
      */
     function reverse($x) {
-        // 將整數反轉
+        // 將輸入整數進行絕對值後反轉
         $int = (int)strrev(abs($x));
         if ($x < 0) {
             $int *= -1;
